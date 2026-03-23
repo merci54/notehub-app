@@ -1,20 +1,38 @@
 .container {
   max-width: 800px;
   margin: 32px auto;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 28px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: fadeIn 0.35s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .loading,
 .error {
   margin-bottom: 20px;
+  color: var(--text-secondary);
 }
 
 @media screen and (max-width: 700px) {
   .container {
     max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
   }
 }
 
@@ -28,50 +46,62 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
 }
 
 .header h2 {
   margin: 0;
-  font-size: 28px;
-  color: #333;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .content {
-  font-size: 18px;
-  line-height: 26px;
-  color: #444;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--text-secondary);
   white-space: pre-wrap;
 }
 
 .date {
-  font-size: 14px;
-  color: #888;
+  font-size: 13px;
+  color: var(--text-muted);
   text-align: right;
 }
 
 .tag {
   display: inline-block;
-  padding: 4px 8px;
-  font-size: 12px;
-  color: #0d6efd;
-  background-color: #e7f1ff;
-  border: 1px solid #b6d4fe;
-  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-accent);
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--radius-full);
   max-width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .back {
   text-decoration: none;
-  background-color: #2a64a7;
-  padding: 6px 12px;
+  background: var(--accent-gradient);
+  padding: 6px 16px;
   font-size: 14px;
+  font-weight: 500;
   color: #fff;
-  transition: background-color 0.2s ease;
+  border-radius: var(--radius-sm);
+  transition:
+    opacity var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
 
-  border-radius: 4px;
+.back:hover {
+  opacity: 0.85;
+  box-shadow: var(--shadow-glow);
 }

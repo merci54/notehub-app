@@ -1,8 +1,23 @@
 .input {
   flex: 1;
-  max-width: 240px;
-  padding: 6px 12px;
-  font-size: 16px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  max-width: 260px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--border-input-focus);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
 }

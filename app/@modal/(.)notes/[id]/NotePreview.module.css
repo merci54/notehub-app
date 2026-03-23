@@ -1,10 +1,7 @@
 .container {
   max-width: 800px;
-  margin: 32px auto;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  padding: 28px;
 }
 
 .item {
@@ -17,41 +14,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
 }
 
 .header h2 {
   margin: 0;
-  font-size: 28px;
-  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .content {
-  font-size: 18px;
-  line-height: 26px;
-  color: #444;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--text-secondary);
   white-space: pre-wrap;
 }
 
 .date {
-  font-size: 14px;
-  color: #888;
+  font-size: 13px;
+  color: var(--text-muted);
   text-align: right;
 }
 
 .tag {
   display: inline-block;
-  padding: 4px 8px;
-  font-size: 12px;
-  color: #0d6efd;
-  background-color: #e7f1ff;
-  border: 1px solid #b6d4fe;
-  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-accent);
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--radius-full);
   max-width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-align: center;
 }
 
@@ -59,21 +61,35 @@
   align-self: flex-start;
   padding: 6px 12px;
   font-size: 14px;
-  color: #000000;
+  color: var(--text-accent);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   text-decoration: underline;
   display: inline-block;
   background-color: transparent;
+  transition: color var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--text-primary);
 }
 
 .close {
-  padding: 6px 12px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #dc3545;
-  border: none;
-  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-danger);
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-sm);
   cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.close:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
 }

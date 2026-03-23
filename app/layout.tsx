@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import "modern-normalize";
 import Header from "@/components/Header/Header";
@@ -8,10 +8,10 @@ import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 
-const robotoSans = Roboto({
-  variable: "--font-roboto-sans",
+const interSans = Inter({
+  variable: "--font-inter-sans",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoSans.variable}`}>
+      <body className={`${interSans.variable}`}>
         <div className="wrapper">
           <TanStackProvider>
             <AuthProvider>

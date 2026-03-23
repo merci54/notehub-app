@@ -6,13 +6,25 @@
 .sidebar {
   flex: 0 0 250px;
   min-height: 100%;
-  background-color: #2c2c2c;
-  color: white;
-  padding: 16px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid var(--border-subtle);
   box-sizing: border-box;
+  position: relative;
+}
+
+.sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--accent-gradient);
+  opacity: 0.2;
 }
 
 .notesWrapper {

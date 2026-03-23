@@ -36,14 +36,14 @@ export default function EditProfilePage() {
 
   useEffect(() => {
     if (user) {
-      setUsername(user.username);
+      setUsername(user.username ?? "");
       return;
     }
     (async () => {
       try {
         const me = await getMe();
         if (me) {
-          setUsername(me.username);
+          setUsername(me.username ?? "");
           setUser(me);
         }
       } catch (err) {

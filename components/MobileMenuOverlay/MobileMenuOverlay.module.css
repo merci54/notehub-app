@@ -1,12 +1,14 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: #333;
+  background: rgba(10, 10, 26, 0.97);
   z-index: 999;
   transform: translateY(100%);
-  transition: transform 0.35s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   will-change: transform;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .open {
@@ -22,7 +24,7 @@
 .menu {
   width: 100%;
   height: 100%;
-  color: #fff;
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,15 +38,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .menu a,
-.menu p,
-.menu button {
-  font-size: 2rem;
-  color: #fff;
+.menu p {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
   text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-base);
+}
+
+.menu a:hover,
+.menu p:hover {
+  color: var(--text-primary);
+}
+
+.menu button {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  transition: color var(--transition-base);
 }
 
 .closeButton {
@@ -53,9 +67,14 @@
   right: 36px;
   background: transparent;
   border: none;
-  color: white;
+  color: var(--text-secondary);
   font-size: 2rem;
   cursor: pointer;
+  transition: color var(--transition-base);
+}
+
+.closeButton:hover {
+  color: var(--text-primary);
 }
 
 @media screen and (min-width: 701px) {
