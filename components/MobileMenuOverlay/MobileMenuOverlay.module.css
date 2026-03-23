@@ -1,14 +1,12 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 26, 0.97);
+  background: #0a0a1a;
   z-index: 999;
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   will-change: transform;
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .open {
